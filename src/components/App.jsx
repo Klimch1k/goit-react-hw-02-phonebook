@@ -3,6 +3,7 @@ import ContactsForm from './ContactsForm/ContactsForm';
 import ContactList from './ContactsList/ContactsList';
 import Filter from './Filter/Filter';
 import { Container, Title } from './App.styled';
+import shortid from 'shortid';
 
 export default class App extends Component {
   state = {
@@ -34,9 +35,15 @@ export default class App extends Component {
     if (contains) {
       return alert(`${data.name} is already exist!`);
     }
+     const newContact = {
+       id: shortid(),
+       name: data.name,
+       number: data.number,
+    };
+    
     this.setState(prevState => {
       return {
-        contacts: [...prevState.contacts, data],
+        contacts: [...prevState.contacts, newContact],
       };
     });
   };

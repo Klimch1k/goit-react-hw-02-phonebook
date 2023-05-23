@@ -21,7 +21,7 @@ class ContactsForm extends Component {
   };
 
   reset = () => {
-    this.setState({ name: '', number: '' });
+    this.setState({ name: '', number: '', });
   };
 
   render() {

@@ -8,7 +8,7 @@ const ContactList = ({ contacts, onDeleteContacts }) => {
   return (
     <Container>
       <List>
-        {contacts.map(({ name, number, id }) => {
+        {contacts.map(({ name, number, id }) => {;
           return (
             <li key={shortid()}>
               {name} {number}
